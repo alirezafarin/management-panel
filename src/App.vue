@@ -11,11 +11,13 @@ import { RouterView } from 'vue-router'
 <style lang="scss">
 .main-route {
   margin-left: 0;
+  margin-top: $navbar-height;
 }
 
 @include media-breakpoint-up(md) {
   .main-route {
-    margin-left: 250px;
+    margin-left: $sidebar-width;
+    margin-top: $navbar-height;
   }
 }
 </style>

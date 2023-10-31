@@ -4,6 +4,6 @@ import TagList from '@/components/TagList.vue'
 </script>
 
 <template>
-  <CustomInput label="Tags" />
+  <CustomInput label="Tags" placeholder="New tag" />
   <TagList />
 </template>

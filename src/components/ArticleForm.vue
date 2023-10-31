@@ -8,16 +8,16 @@ import ArticleTags from './ArticleTags.vue'
 
 <template>
   <b-row>
-    <b-col cols="9">
+    <b-col lg="9" md="12">
       <CustomForm @submit="console.log('submit')">
         <CustomInput label="Title" />
         <CustomInput label="Description" />
         <CustomTextarea label="Body" rows="10" />
-        <CustomBtn variant="primary" type="submit" />
       </CustomForm>
     </b-col>
     <b-col>
       <ArticleTags />
     </b-col>
   </b-row>
+  <CustomBtn class="mt-2" variant="primary" type="submit" />
 </template>

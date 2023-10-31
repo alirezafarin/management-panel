@@ -11,13 +11,13 @@ const selected = ref([])
 </script>
 
 <template>
-  <div class="border container rounded pt-3">
+  <div class="border tag-list rounded p-3">
     <CustomCheckboxGroup :options="options" v-model="selected" />
   </div>
 </template>
 
 <style scoped lang="scss">
-.container {
+.tag-list {
   border-color: $gray-400 !important;
   height: 370px;
 }

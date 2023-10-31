@@ -1,5 +1,5 @@
 <template>
-  <b-navbar type="dark" variant="dark">
+  <b-navbar fixed="top" type="dark" variant="dark">
     <b-navbar-brand href="#"><slot name="brand">Arvan Challenge</slot></b-navbar-brand>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>

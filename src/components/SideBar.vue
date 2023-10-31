@@ -9,12 +9,12 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .sidebar {
-  top: 56px;
-  height: calc(100vh - 56px);
-  background-color: var(--primary);
-  width: 250px;
-  position: absolute;
+  position: fixed;
+  top: $navbar-height;
+  bottom: 0;
+  background-color: $primary;
+  width: $sidebar-width;
 }
 </style>

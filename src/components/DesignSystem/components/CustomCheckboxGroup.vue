@@ -9,6 +9,7 @@ defineProps<{ value?: any[]; options: any[] }>()
       @input="$emit('input', $event)"
       :options="options"
       v-bind="$attrs"
+      stacked
     ></b-form-checkbox-group>
   </b-form-group>
 </template>
