@@ -17,11 +17,11 @@ const onSubmit = () => {
   <div class="container">
     <FormBox title="Login">
       <CustomForm @submit="onSubmit">
-        <CustomInput name="email" label="Email" v-model="form.email" />
+        <CustomInput name="email" label="Email" v-model="form.email" type="email" />
         <CustomInput name="password" label="Password" v-model="form.pass" type="password" />
         <CustomBtn class="mt-4" variant="primary" block type="submit"> Login </CustomBtn>
       </CustomForm>
-      <template #redirect>
+      <template #link>
         <p>
           Don't have an account?
           <RouterLink class="font-weight-bold text-dark" :to="{ name: 'register' }">
