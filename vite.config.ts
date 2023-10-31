@@ -11,5 +11,14 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       vue: '@vue/compat'
     }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "./src/assets/styles/app.scss";
+        `
+      }
+    }
   }
 })

@@ -3,8 +3,19 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <RouterView name="navigation" />
   <RouterView />
+  <RouterView name="navigation" />
+  <RouterView class="main-route p-4" name="main" />
 </template>
 
-<style scoped></style>
+<style lang="scss">
+.main-route {
+  margin-left: 0;
+}
+
+@include media-breakpoint-up(md) {
+  .main-route {
+    margin-left: 250px;
+  }
+}
+</style>

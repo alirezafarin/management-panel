@@ -22,7 +22,7 @@ const router = createRouter({
       name: 'create',
       components: {
         navigation: NavigationView,
-        default: CreateView
+        main: CreateView
       }
     }
   ]
