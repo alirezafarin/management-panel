@@ -3,6 +3,7 @@ import CustomBtn from '@/components/DesignSystem/components/CustomBtn.vue'
 import CustomForm from '@/components/DesignSystem/components/CustomForm.vue'
 import CustomInput from '@/components/DesignSystem/components/CustomInput.vue'
 import FormBox from '@/components/FormBox.vue'
+import { RouterLink } from 'vue-router'
 import { reactive } from 'vue'
 
 const form = reactive({ user: '', email: '', pass: '' })
@@ -14,17 +15,18 @@ const onSubmit = () => {
 
 <template>
   <div class="container">
-    <FormBox title="Register">
+    <FormBox title="Login">
       <CustomForm @submit="onSubmit">
-        <CustomInput name="username" label="User" v-model="form.user" />
         <CustomInput name="email" label="Email" v-model="form.email" />
         <CustomInput name="password" label="Password" v-model="form.pass" type="password" />
-        <CustomBtn class="mt-4" variant="primary" block type="submit"> Register </CustomBtn>
+        <CustomBtn class="mt-4" variant="primary" block type="submit"> Login </CustomBtn>
       </CustomForm>
       <template #redirect>
         <p>
-          Already Registered?
-          <RouterLink class="font-weight-bold text-dark" :to="{ name: 'login' }">Login</RouterLink>
+          Don't have an account?
+          <RouterLink class="font-weight-bold text-dark" :to="{ name: 'register' }">
+            Register Now</RouterLink
+          >
         </p>
       </template>
     </FormBox>

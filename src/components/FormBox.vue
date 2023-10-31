@@ -4,7 +4,7 @@ defineProps<{ title: string }>()
 
 <template>
   <div class="form-container px-3">
-    <h1 class="title mt-4 mb-4">{{ title }}</h1>
+    <h1 class="title text-uppercase mt-4 mb-4">{{ title }}</h1>
     <slot></slot>
     <div class="mt-2">
       <slot name="redirect"></slot>
