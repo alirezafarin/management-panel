@@ -1,12 +1,12 @@
 import { ref } from 'vue';
 import { useAuth } from '.';
-import { registerService } from '../services';
+import { loginService } from '../services';
 
-export function useRegister() {
-  const form = ref({ username: '', email: '', password: '' });
+export function useLogin() {
+  const form = ref({ email: '', password: '' });
   const { buttonDisabled, isPending, onSubmit } = useAuth({
     formValues: form,
-    serviceFn: registerService
+    serviceFn: loginService
   });
 
   return { form, onSubmit, buttonDisabled, isPending };
