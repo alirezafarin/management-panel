@@ -1,14 +1,15 @@
-import App from './App.vue'
-import router from './router'
-import Vue, { createApp } from '@vue/compat'
-import BootstrapVue from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import { VueQueryPlugin } from '@tanstack/vue-query';
+import Vue, { createApp } from '@vue/compat';
+import BootstrapVue from 'bootstrap-vue';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import App from './App.vue';
+import router from './router';
 
-Vue.use(BootstrapVue)
+Vue.use(BootstrapVue);
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(router)
-
-app.mount('#app')
+app.use(VueQueryPlugin);
+app.use(router);
+app.mount('#app');
