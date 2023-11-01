@@ -1,12 +1,17 @@
+import { useMutation } from '@tanstack/vue-query';
 import { computed, ref } from 'vue';
 import { registerService, type IRegisterBody } from '../services';
-import { useMutation } from '@tanstack/vue-query';
+import { setToken } from '@/helper';
 
 export function useRegister() {
   const form = ref({ username: '', email: '', password: '' });
 
   const { mutate, isPending } = useMutation({
-    mutationFn: (userInfo: IRegisterBody) => registerService(userInfo)
+    mutationFn: (userInfo: IRegisterBody) => registerService(userInfo),
+    onSuccess: (data) => setToken(data.user.token),
+    onError: (error) => {
+      // toast.error('error');
+    }
   });
 
   const buttonDisabled = computed(() => {
