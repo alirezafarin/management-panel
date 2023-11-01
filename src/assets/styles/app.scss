@@ -13,4 +13,8 @@ $bg-form-box: #eceeef !default;
   color: $white !important;
 }
 
+.Vue-Toastification__toast--error {
+  background-color: $danger !important;
+}
+
 $navbar-height: $nav-link-height + $nav-link-padding-y * 2;
