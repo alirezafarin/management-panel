@@ -8,5 +8,8 @@ export const en = {
     noAccount: "Don't have an account?",
     registerNow: 'Register Now',
     registered: 'Already Registered?'
+  },
+  articles: {
+    allPosts: 'All Posts'
   }
 };
