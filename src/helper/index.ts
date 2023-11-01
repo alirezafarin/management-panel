@@ -7,3 +7,5 @@ export const getToken = () => {
 export const setToken = (token: string) => {
   return localStorage.setItem(TOKEN_STORAGE, token);
 };
+
+export const isAuthenticated = () => !!getToken();
