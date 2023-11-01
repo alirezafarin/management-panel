@@ -9,3 +9,19 @@ export interface ICustomInputProps {
 export type CustomFormProps = {
   submit: []
 }
+
+export type CustomTableProps = {
+  items: any[]
+  fields?: any[]
+  withNumber?: boolean
+}
+
+export interface IOption {
+  id: number
+  text: string
+}
+
+export interface ICustomDropDownProps {
+  text?: string
+  options: IOption[]
+}
