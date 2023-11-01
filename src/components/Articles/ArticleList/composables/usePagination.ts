@@ -3,7 +3,7 @@ import { useRoute } from 'vue-router';
 
 export function usePagination() {
   const route = useRoute();
-  const currentPage = ref(route.params.page || 1);
+  const currentPage = ref<string>((route.params.page as string) || '1');
 
   const linkGen = (pageNum: number) => {
     return pageNum === 1 ? '/' : `/articles/${pageNum}`;
@@ -12,7 +12,7 @@ export function usePagination() {
   watch(
     () => route.params.page,
     async () => {
-      currentPage.value = route.params.page || 1;
+      currentPage.value = (route.params.page as string) || '1';
     }
   );
 
