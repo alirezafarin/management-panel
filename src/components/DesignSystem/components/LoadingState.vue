@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CustomSpinner from './DesignSystem/components/CustomSpinner.vue';
+import CustomSpinner from './CustomSpinner.vue';
 </script>
 
 <template>

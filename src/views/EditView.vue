@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import CreateEditArticle from '@/components/Articles/CreateEditArticle/CreateEditArticle.vue';
 import { useEditArticle } from '@/components/Articles/CreateEditArticle/composables';
-import LoadingState from '@/components/LoadingState.vue';
+import LoadingState from '@/components/DesignSystem/components/LoadingState.vue';
 import { en } from '@/dictionary/en';
 
 const { isFetching } = useEditArticle();
