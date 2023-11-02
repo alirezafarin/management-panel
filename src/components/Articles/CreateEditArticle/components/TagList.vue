@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CustomCheckboxGroup from '@/components/DesignSystem/components/CustomCheckboxGroup.vue';
+import CustomSpinner from '@/components/DesignSystem/components/CustomSpinner.vue';
 import { inject } from 'vue';
 import {
   formInjectionKey,
@@ -7,7 +8,6 @@ import {
   type IArticleFormInject,
   type ITagsInject
 } from '../composables';
-import CustomSpinner from '@/components/DesignSystem/components/CustomSpinner.vue';
 
 const { formValues } = inject<IArticleFormInject>(formInjectionKey) as IArticleFormInject;
 const { isFetchingTags, tags } = inject<ITagsInject>(tagsInjectionKey) as ITagsInject;

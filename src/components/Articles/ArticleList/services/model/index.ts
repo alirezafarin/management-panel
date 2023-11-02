@@ -22,3 +22,7 @@ export interface IArticles {
   articles: IArticle[];
   articlesCount: number;
 }
+
+export interface ISingleArticle {
+  article: IArticle;
+}

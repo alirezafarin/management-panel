@@ -30,5 +30,7 @@ export const http = {
   post: <T = any[]>(url: string, data?: any, config?: any) =>
     axiosInstance.post<ResponseType<T>>(url, data, config),
   get: <T = any[], D = any>(url: string, config?: AxiosRequestConfig<D>) =>
-    axiosInstance.get<ResponseType<T>>(url, config)
+    axiosInstance.get<ResponseType<T>>(url, config),
+  put: <T = any[]>(url: string, data?: any, config?: any) =>
+    axiosInstance.put<ResponseType<T>>(url, data, config)
 };
