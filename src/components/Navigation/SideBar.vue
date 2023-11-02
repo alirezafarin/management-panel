@@ -1,9 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { en } from '@/dictionary/en';
+</script>
 
 <template>
-  <div class="sidebar px-3 pt-2">
+  <div class="sidebar pt-2">
     <h4>
-      <slot name="title"> <p class="text-light">Post</p> </slot>
+      <slot name="title">
+        <p class="text-light px-3">{{ en.articles.post }}</p>
+      </slot>
     </h4>
     <slot name="content"></slot>
   </div>

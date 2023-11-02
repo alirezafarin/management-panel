@@ -1,19 +1,17 @@
 <script setup lang="ts">
-import CustomBtn from '@/components/DesignSystem/components/CustomBtn.vue';
-import { RouterLink } from 'vue-router';
+import { en } from '@/dictionary/en';
+import SidebarLink from './SidebarLink.vue';
 
 withDefaults(defineProps<{ variant?: string }>(), { variant: 'primary' });
+
+const links = [
+  { id: 0, content: en.articles.allArticles, to: { name: 'home' } },
+  { id: 1, content: en.articles.newArticle, to: { name: 'createArticle' } }
+];
 </script>
 
 <template>
-  <RouterLink class="text-light text-decoration-none" to="/">
-    <CustomBtn block :variant="variant" size="md" class="text-left">
-      All Articles
-    </CustomBtn></RouterLink
-  >
-  <RouterLink class="text-light text-decoration-none" :to="{ name: 'createArticle' }">
-    <CustomBtn block :variant="variant" size="md" class="text-left">
-      New Article
-    </CustomBtn></RouterLink
+  <SidebarLink v-for="link in links" :key="link.id" :to="link.to" :variant="variant">
+    {{ link.content }}</SidebarLink
   >
 </template>

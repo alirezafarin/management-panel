@@ -16,7 +16,9 @@ export const en = {
     editArticle: 'Edit Article',
     deleteArticle: 'Delete Article',
     sureToDelete: 'Are you sure to delete Article ?',
-    deletedSuccessfully: 'Article deleted Successfully.'
+    deletedSuccessfully: 'Article deleted Successfully.',
+    post: 'Post',
+    allArticles: 'All Articles'
   },
   yes: 'Yes',
   no: 'No'

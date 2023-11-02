@@ -3,6 +3,7 @@ $sidebar-width: 250px;
 $form-box-width: 450px;
 $dark-blue: #5bc0de !default;
 $bg-form-box: #eceeef !default;
+$bg-active-link: rgba(255, 255, 255, 0.15) !default;
 
 // Then import Bootstrap and BootstrapVue SCSS files (order is important)
 @import 'node_modules/bootstrap/scss/bootstrap.scss';

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps<{ isLoading?: boolean; disabled?: boolean; click: any }>();
+defineProps<{ isLoading?: boolean; disabled?: boolean; click?: any }>();
 </script>
 
 <template>
