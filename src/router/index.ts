@@ -5,6 +5,7 @@ import CreateView from '@/views/CreateView.vue';
 import ArticlesView from '@/views/ArticlesView.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 import { isAuthenticated } from '@/helper';
+import EditView from '@/views/EditView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,7 +36,7 @@ const router = createRouter({
       name: 'editArticle',
       components: {
         navigation: NavigationView,
-        main: CreateView
+        main: EditView
       },
       meta: { requiresAuth: true }
     },
