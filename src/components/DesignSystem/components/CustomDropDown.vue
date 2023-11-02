@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ICustomDropDownProps } from '../types';
+import type { ICustomDropDownProps } from '../model';
 
 withDefaults(defineProps<ICustomDropDownProps>(), { text: '...' });
 </script>
@@ -12,3 +12,4 @@ withDefaults(defineProps<ICustomDropDownProps>(), { text: '...' });
     </template>
   </b-dropdown>
 </template>
+../model

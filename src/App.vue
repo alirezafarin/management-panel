@@ -1,11 +1,16 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router';
+import CustomModal from './components/DesignSystem/components/CustomModal.vue';
+import { useModal } from './components/DesignSystem/composables';
+
+useModal();
 </script>
 
 <template>
   <RouterView />
   <RouterView name="navigation" />
   <RouterView class="main-route p-4" name="main" />
+  <CustomModal />
 </template>
 
 <style lang="scss">

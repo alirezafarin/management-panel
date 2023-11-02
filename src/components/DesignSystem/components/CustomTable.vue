@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import TableDropDown from '@/components/Articles/ArticleList/components/TableDropDown.vue';
-import type { CustomTableProps } from '../types';
+import type { CustomTableProps } from '../model';
 
 defineProps<CustomTableProps>();
 </script>
