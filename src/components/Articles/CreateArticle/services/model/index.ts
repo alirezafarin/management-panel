@@ -12,3 +12,7 @@ export interface ICreateArticleBody {
 export interface ITags {
   tags: string[];
 }
+
+export interface IArticleFormValues extends ICreateArticle {
+  newTag: string;
+}

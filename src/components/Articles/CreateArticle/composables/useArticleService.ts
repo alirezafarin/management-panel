@@ -5,6 +5,7 @@ import { useRouter } from 'vue-router';
 import { useToast } from 'vue-toastification';
 import { type ICreateArticleBody } from '../services';
 import type { IUseArticleServiceProps } from './model';
+import { checkRequiredFields } from './helper';
 
 export function useArticleService({
   serviceFn,
@@ -24,12 +25,12 @@ export function useArticleService({
   });
 
   const buttonDisabled = computed(() => {
-    return Object.values(formValues.value).some((value) => !value);
+    return checkRequiredFields(formValues.value);
   });
 
   const onSubmit = () => {
-    console.log('onSubmit');
-    mutate({ article: { ...formValues.value } });
+    const { body, description, newTag, tagList, title } = formValues.value;
+    mutate({ article: { title, description, body, tagList: [...tagList, newTag] } });
   };
 
   return {
