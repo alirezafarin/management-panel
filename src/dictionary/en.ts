@@ -7,7 +7,7 @@ export const en = {
     pass: 'Password',
     noAccount: "Don't have an account?",
     registerNow: 'Register Now',
-    registered: 'Already Registered?'
+    registered: 'Already Registered?',
   },
   articles: {
     allPosts: 'All Posts',
@@ -18,8 +18,8 @@ export const en = {
     sureToDelete: 'Are you sure to delete Article ?',
     deletedSuccessfully: 'Article deleted Successfully.',
     post: 'Post',
-    allArticles: 'All Articles'
+    allArticles: 'All Articles',
   },
   yes: 'Yes',
-  no: 'No'
+  no: 'No',
 };
