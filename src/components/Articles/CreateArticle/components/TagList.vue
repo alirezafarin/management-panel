@@ -26,5 +26,6 @@ const { isFetchingTags, tags } = inject<ITagsInject>(tagsInjectionKey) as ITagsI
 .tag-list {
   border-color: $gray-400 !important;
   height: 370px;
+  overflow-y: auto;
 }
 </style>
