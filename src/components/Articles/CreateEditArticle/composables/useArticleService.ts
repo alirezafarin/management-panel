@@ -19,18 +19,17 @@ export function useArticleService({
     mutationFn: (articleValues: ICreateArticleBody) => serviceFn(articleValues),
     onSuccess: () => {
       toast.success(successMsg);
-      // router.push({ name: 'home' });
+      router.push({ name: 'home' });
     },
     onError: (error) => {}
   });
 
-  const buttonDisabled = computed(() => {
-    return checkRequiredFields(formValues.value);
-  });
+  const buttonDisabled = computed(() => checkRequiredFields(formValues.value));
 
   const onSubmit = () => {
-    const { body, description, newTag, tagList, title } = formValues.value;
-    mutate({ article: { title, description, body, tagList: [...tagList, newTag] } });
+    const { newTag, tagList, ...otherValues } = formValues.value;
+    const selectedTags = newTag ? [...tagList, newTag] : tagList;
+    mutate({ article: { ...otherValues, tagList: selectedTags } });
   };
 
   return {
