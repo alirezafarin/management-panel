@@ -1,12 +1,12 @@
 <script setup lang="ts">
 withDefaults(defineProps<{ title: string; titleClass?: string }>(), {
-  titleClass: 'text-capitalize'
+  titleClass: 'text-capitalize',
 });
 </script>
 
 <template>
-  <div class="form-box-container">
-    <div class="form-box-content rounded px-3">
+  <div class="form-box-container mx-2 d-flex justify-content-center align-items-center">
+    <div class="form-box-content w-100 rounded px-3">
       <h1 :class="['form-box-title text-secondary text-center mt-4 mb-4', titleClass]">
         {{ title }}
       </h1>
@@ -21,14 +21,10 @@ withDefaults(defineProps<{ title: string; titleClass?: string }>(), {
 <style scoped lang="scss">
 .form-box-container {
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .form-box-content {
   background-color: $bg-form-box;
   max-width: $form-box-width;
-  width: 100%;
 }
 
 .form-box-title {
