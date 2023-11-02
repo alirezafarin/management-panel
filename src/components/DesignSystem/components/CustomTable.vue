@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import TableDropDown from '@/components/Articles/ArticleList/components/TableDropDown.vue';
 import type { CustomTableProps } from '../model';
+import CustomSpinner from './CustomSpinner.vue';
 
 defineProps<CustomTableProps>();
 </script>
@@ -35,7 +36,7 @@ defineProps<CustomTableProps>();
       </template>
       <template #table-busy>
         <div class="text-center">
-          <b-spinner variant="primary" class="align-middle"></b-spinner>
+          <CustomSpinner variant="primary" class="align-middle" />
         </div>
       </template>
     </b-table>
