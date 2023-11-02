@@ -1,5 +1,3 @@
-export type ResponseType<T> = T;
-
 export interface IError {
   [key: string]: string[];
 }
