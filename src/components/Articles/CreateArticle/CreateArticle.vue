@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import ArticleForm from './components/ArticleForm.vue';
 import { en } from '@/dictionary/en';
+import { useCreateArticle } from './composables';
+
+useCreateArticle();
 </script>
 
 <template>

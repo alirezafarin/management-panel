@@ -1,2 +1,2 @@
-export * from './articlesService';
+export * from './fetchArticlesService';
 export * from './model';

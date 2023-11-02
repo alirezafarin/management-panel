@@ -11,6 +11,7 @@ export const en = {
   },
   articles: {
     allPosts: 'All Posts',
-    newArticle: 'New Article'
+    newArticle: 'New Article',
+    createSuccessful: 'Well done! Article created successfully'
   }
 };
