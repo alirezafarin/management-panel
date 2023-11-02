@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import CustomInput from './DesignSystem/components/CustomInput.vue'
-import TagList from '@/components/TagList.vue'
+import CustomInput from '@/components/DesignSystem/components/CustomInput.vue';
+import TagList from './TagList.vue';
 </script>
 
 <template>

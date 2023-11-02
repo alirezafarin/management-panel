@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import CustomBtn from './DesignSystem/components/CustomBtn.vue'
-import CustomForm from './DesignSystem/components/CustomForm.vue'
-import CustomInput from './DesignSystem/components/CustomInput.vue'
-import CustomTextarea from './DesignSystem/components/CustomTextarea.vue'
-import ArticleTags from './ArticleTags.vue'
+import CustomForm from '@/components/DesignSystem/components/CustomForm.vue';
+import ArticleTags from './ArticleTags.vue';
+import CustomInput from '@/components/DesignSystem/components/CustomInput.vue';
+import CustomTextarea from '@/components/DesignSystem/components/CustomTextarea.vue';
+import CustomBtn from '@/components/DesignSystem/components/CustomBtn.vue';
 </script>
 
 <template>

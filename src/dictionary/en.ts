@@ -10,6 +10,7 @@ export const en = {
     registered: 'Already Registered?'
   },
   articles: {
-    allPosts: 'All Posts'
+    allPosts: 'All Posts',
+    newArticle: 'New Article'
   }
 };

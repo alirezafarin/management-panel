@@ -22,8 +22,8 @@ const router = createRouter({
       meta: { authPath: true }
     },
     {
-      path: '/create',
-      name: 'create',
+      path: '/articles/create',
+      name: 'createArticle',
       components: {
         navigation: NavigationView,
         main: CreateView

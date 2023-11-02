@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
-import CustomBtn from './DesignSystem/components/CustomBtn.vue'
+import { RouterLink } from 'vue-router';
+import CustomBtn from './DesignSystem/components/CustomBtn.vue';
 
-withDefaults(defineProps<{ variant?: string }>(), { variant: 'primary' })
+withDefaults(defineProps<{ variant?: string }>(), { variant: 'primary' });
 </script>
 
 <template>
@@ -11,7 +11,7 @@ withDefaults(defineProps<{ variant?: string }>(), { variant: 'primary' })
       All Articles
     </CustomBtn></RouterLink
   >
-  <RouterLink class="text-light text-decoration-none" to="/">
+  <RouterLink class="text-light text-decoration-none" :to="{ name: 'createArticle' }">
     <CustomBtn block :variant="variant" size="md" class="text-left">
       New Article
     </CustomBtn></RouterLink
