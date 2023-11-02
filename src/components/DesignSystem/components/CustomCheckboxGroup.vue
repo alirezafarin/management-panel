@@ -5,7 +5,7 @@ defineProps<{ value?: any[]; options: any[] }>();
 <template>
   <b-form-group>
     <b-form-checkbox-group
-      :value="value"
+      :checked="value"
       @input="$emit('input', $event)"
       :options="options"
       v-bind="$attrs"
