@@ -33,7 +33,7 @@ defineProps<CustomTableProps>();
         }}
         <TableDropDown :slug="data.item.slug" />
       </template>
-      <template v-if="!items.length" #table-busy>
+      <template #table-busy>
         <div class="text-center">
           <b-spinner variant="primary" class="align-middle"></b-spinner>
         </div>
