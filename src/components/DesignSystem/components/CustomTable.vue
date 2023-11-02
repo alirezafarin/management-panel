@@ -1,14 +1,8 @@
 <script setup lang="ts">
+import TableDropDown from '@/components/Articles/ArticleList/components/TableDropDown.vue';
 import type { CustomTableProps } from '../types';
-import CustomDropDown from './CustomDropDown.vue';
 
 defineProps<CustomTableProps>();
-
-const options = [
-  { id: 1, text: 'edit' },
-  { id: 0, text: 'divider' },
-  { id: 0, text: 'delete' }
-];
 </script>
 
 <template>
@@ -37,7 +31,7 @@ const options = [
             day: 'numeric'
           })
         }}
-        <CustomDropDown class="ml-2" variant="dark-blue" :options="options" />
+        <TableDropDown :slug="data.item.slug" />
       </template>
       <template v-if="!items.length" #table-busy>
         <div class="text-center">

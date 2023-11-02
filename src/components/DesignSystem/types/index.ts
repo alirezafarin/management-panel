@@ -16,12 +16,13 @@ export type CustomTableProps = {
   withNumber?: boolean;
 };
 
-export interface IOption {
+export interface IDropDownOption {
   id: number;
   text: string;
+  onClick?: (slug: string) => void;
 }
 
 export interface ICustomDropDownProps {
   text?: string;
-  options: IOption[];
+  options: IDropDownOption[];
 }

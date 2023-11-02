@@ -31,6 +31,15 @@ const router = createRouter({
       meta: { requiresAuth: true }
     },
     {
+      path: '/articles/edit/:slug',
+      name: 'editArticle',
+      components: {
+        navigation: NavigationView,
+        main: CreateView
+      },
+      meta: { requiresAuth: true }
+    },
+    {
       path: '/articles/:page?',
       name: 'home',
       components: {
