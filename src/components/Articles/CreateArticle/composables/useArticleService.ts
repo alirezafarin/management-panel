@@ -1,10 +1,10 @@
+import { en } from '@/dictionary/en';
 import { useMutation } from '@tanstack/vue-query';
 import { computed } from 'vue';
+import { useRouter } from 'vue-router';
+import { useToast } from 'vue-toastification';
 import { type ICreateArticleBody } from '../services';
 import type { IUseArticleServiceProps } from './model';
-import { en } from '@/dictionary/en';
-import { useToast } from 'vue-toastification';
-import { useRouter } from 'vue-router';
 
 export function useArticleService({
   serviceFn,
@@ -13,6 +13,7 @@ export function useArticleService({
 }: IUseArticleServiceProps) {
   const toast = useToast();
   const router = useRouter();
+
   const { mutate, isPending } = useMutation({
     mutationFn: (articleValues: ICreateArticleBody) => serviceFn(articleValues),
     onSuccess: () => {

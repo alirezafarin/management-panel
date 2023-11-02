@@ -14,3 +14,8 @@ export interface IArticleFormInject {
   buttonDisabled: Ref<boolean>;
   isPending: Ref<boolean>;
 }
+
+export interface ITagsInject {
+  isFetchingTags: Ref<boolean>;
+  tags: Ref<string[]>;
+}

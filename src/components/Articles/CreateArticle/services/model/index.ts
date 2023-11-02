@@ -8,3 +8,7 @@ export interface ICreateArticle {
 export interface ICreateArticleBody {
   article: ICreateArticle;
 }
+
+export interface ITags {
+  tags: string[];
+}

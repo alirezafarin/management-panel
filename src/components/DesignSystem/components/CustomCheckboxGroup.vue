@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps<{ value?: any[]; options: any[] }>()
+defineProps<{ value?: any[]; options: any[] }>();
 </script>
 
 <template>

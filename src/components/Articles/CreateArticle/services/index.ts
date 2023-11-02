@@ -1,2 +1,3 @@
-export * from './CreateArticleService';
+export * from './createArticleService';
 export * from './model';
+export * from './fetchTagsService';

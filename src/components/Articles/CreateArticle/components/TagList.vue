@@ -1,18 +1,24 @@
 <script setup lang="ts">
-import CustomCheckboxGroup from '@/components/DesignSystem/components/CustomCheckboxGroup.vue'
-import { ref } from 'vue'
-const options = [
-  { text: 'Orange', value: 'orange' },
-  { text: 'Apple', value: 'apple' },
-  { text: 'Pineapple', value: 'pineapple' },
-  { text: 'Grape', value: 'grape' }
-]
-const selected = ref([])
+import CustomCheckboxGroup from '@/components/DesignSystem/components/CustomCheckboxGroup.vue';
+import { inject } from 'vue';
+import {
+  formInjectionKey,
+  tagsInjectionKey,
+  type IArticleFormInject,
+  type ITagsInject
+} from '../composables';
+import CustomSpinner from '@/components/DesignSystem/components/CustomSpinner.vue';
+
+const { formValues } = inject<IArticleFormInject>(formInjectionKey) as IArticleFormInject;
+const { isFetchingTags, tags } = inject<ITagsInject>(tagsInjectionKey) as ITagsInject;
 </script>
 
 <template>
   <div class="border tag-list rounded p-3">
-    <CustomCheckboxGroup :options="options" v-model="selected" />
+    <div class="h-100 d-flex justify-content-center align-items-center" v-if="isFetchingTags">
+      <CustomSpinner variant="primary" />
+    </div>
+    <CustomCheckboxGroup v-else :options="tags" v-model="formValues.tagList" />
   </div>
 </template>
 
