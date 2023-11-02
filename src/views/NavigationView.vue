@@ -1,16 +1,17 @@
 <script setup lang="ts">
-import CustomBtn from '@/components/DesignSystem/components/CustomBtn.vue'
-import CustomNavbar from '@/components/DesignSystem/components/CustomNavbar.vue'
-import SideBar from '@/components/SideBar.vue'
-import SidebarLinks from '@/components/SidebarLinks.vue'
+import { useCurrentUser } from '@/components/Authentication/composables';
+import CustomBtn from '@/components/DesignSystem/components/CustomBtn.vue';
+import CustomNavbar from '@/components/DesignSystem/components/CustomNavbar.vue';
+import SideBar from '@/components/Navigation/SideBar.vue';
+import SidebarLinks from '@/components/Navigation/components/SidebarLinks.vue';
 
-const username = 'username'
+const { data, isFetching } = useCurrentUser();
 </script>
 
 <template>
   <CustomNavbar toggleable="md">
-    <template #left>
-      <p class="d-none d-md-block text-light mb-md-0">Welcome {{ username }}</p>
+    <template v-if="!isFetching" #left>
+      <p class="d-none d-md-block text-light mb-md-0">Welcome {{ data?.user.username }}</p>
     </template>
     <template #right>
       <CustomBtn variant="outline-info">Logout</CustomBtn>

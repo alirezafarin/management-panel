@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import CustomBtn from '@/components/DesignSystem/components/CustomBtn.vue';
 import { RouterLink } from 'vue-router';
-import CustomBtn from './DesignSystem/components/CustomBtn.vue';
 
 withDefaults(defineProps<{ variant?: string }>(), { variant: 'primary' });
 </script>
