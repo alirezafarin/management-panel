@@ -1,3 +1,4 @@
+import { deleteToken } from '@/helper';
 import { useQuery } from '@tanstack/vue-query';
 import { currentUserService } from '../services';
 
@@ -7,5 +8,10 @@ export function useCurrentUser() {
     queryFn: () => currentUserService()
   });
 
-  return { data, isFetching };
+  const logout = () => {
+    deleteToken();
+    window.location.replace('/login');
+  };
+
+  return { data, isFetching, logout };
 }

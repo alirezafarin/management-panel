@@ -5,7 +5,7 @@ import CustomNavbar from '@/components/DesignSystem/components/CustomNavbar.vue'
 import SideBar from '@/components/Navigation/SideBar.vue';
 import SidebarLinks from '@/components/Navigation/components/SidebarLinks.vue';
 
-const { data, isFetching } = useCurrentUser();
+const { data, isFetching, logout } = useCurrentUser();
 </script>
 
 <template>
@@ -14,7 +14,7 @@ const { data, isFetching } = useCurrentUser();
       <p class="d-none d-md-block text-light mb-md-0">Welcome {{ data?.user.username }}</p>
     </template>
     <template #right>
-      <CustomBtn variant="outline-info">Logout</CustomBtn>
+      <CustomBtn :click="logout" variant="outline-info">Logout</CustomBtn>
     </template>
     <template #collapsable>
       <div class="d-sm-block d-md-none d-lg-none">
