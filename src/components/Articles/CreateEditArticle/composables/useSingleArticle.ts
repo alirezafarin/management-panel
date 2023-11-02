@@ -18,8 +18,12 @@ export function useSingleArticle(slug: string) {
 
   watch(data, () => {
     if (data.value?.article) {
+      const { title, description, body, tagList } = data.value.article;
       formValues.value = {
-        ...data.value.article,
+        title,
+        description,
+        body,
+        tagList,
         newTag: ''
       };
     }
