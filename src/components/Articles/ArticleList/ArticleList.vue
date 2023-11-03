@@ -5,7 +5,7 @@ import { en } from '@/dictionary/en';
 import { useArticleList, usePagination } from './composables';
 
 const { linkGen, currentPage } = usePagination();
-const { data, isFetching } = useArticleList(currentPage);
+const { data, isFetching, pagesCount } = useArticleList(currentPage);
 
 const fields = [
   '#',
@@ -46,11 +46,16 @@ const fields = [
     <h1 class="mb-4">
       {{ en.articles.allPosts }}
     </h1>
-    <BaseTable with-number :fields="fields" :items="data.articles" :busy="isFetching" />
+    <BaseTable
+      :fields="fields"
+      :items="data.articles"
+      :busy="isFetching"
+      :current-page="+currentPage"
+    />
     <BasePagination
       class="d-flex justify-content-center mt-2"
       :link-gen="linkGen"
-      :number-of-pages="10"
+      :number-of-pages="pagesCount"
       v-model="currentPage"
       first-number
       last-number

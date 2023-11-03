@@ -15,7 +15,9 @@ defineProps<BaseTableProps>();
       :items="items"
       head-variant="light"
     >
-      <template v-if="withNumber" #cell(#)="data">{{ data.index + 1 }} </template>
+      <template #cell(#)="data"
+        >{{ (($attrs['current-page'] as number) - 1) * 10 + data.index + 1 }}
+      </template>
       <template #cell(name)="data">
         {{ data.value }}
       </template>
