@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/vue-query';
 import { ref, watch } from 'vue';
 import { fetchSingleArticleService, type IArticleFormValues } from '../services';
+import { queryKeys } from '@/constants';
 
 export function useSingleArticle(slug: string) {
   const formValues = ref<IArticleFormValues>({
@@ -8,12 +9,12 @@ export function useSingleArticle(slug: string) {
     body: '',
     description: '',
     tagList: [],
-    newTag: ''
+    newTag: '',
   });
 
   const { data, isFetching } = useQuery({
-    queryKey: ['fetchArticleBySlug', slug],
-    queryFn: () => fetchSingleArticleService(slug)
+    queryKey: [queryKeys.fetchArticleBySlug, slug],
+    queryFn: () => fetchSingleArticleService(slug),
   });
 
   watch(data, () => {
@@ -24,13 +25,13 @@ export function useSingleArticle(slug: string) {
         description,
         body,
         tagList,
-        newTag: ''
+        newTag: '',
       };
     }
   });
 
   return {
     formValues,
-    isFetching
+    isFetching,
   };
 }

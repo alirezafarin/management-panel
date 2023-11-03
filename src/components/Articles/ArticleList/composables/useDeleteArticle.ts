@@ -5,6 +5,7 @@ import { deleteArticleService } from '../services';
 import { useToast } from 'vue-toastification';
 import { modalInjectionKey } from '@/components/Base/constants';
 import type { IModalInject } from '@/components/Base/model';
+import { queryKeys } from '@/constants';
 
 export function useDeleteArticle(slug: string) {
   const { setModal } = inject(modalInjectionKey) as IModalInject;
@@ -15,7 +16,7 @@ export function useDeleteArticle(slug: string) {
     mutationFn: () => deleteArticleService(slug),
     onSuccess: (data) => {
       toast.success(en.articles.deletedSuccessfully);
-      queryClient.invalidateQueries({ queryKey: ['articles'] });
+      queryClient.invalidateQueries({ queryKey: [queryKeys.articles] });
     },
     onError: (error) => {
       // toast.error('error');

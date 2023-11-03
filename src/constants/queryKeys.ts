@@ -1,3 +1,6 @@
 export const queryKeys = {
-  articles: (page: string) => ['articles', page],
+  articles: 'articles',
+  fetchArticleBySlug: 'fetchArticleBySlug',
+  tags: 'tags',
+  currentUser: 'currentUser',
 };

@@ -1,12 +1,13 @@
 import { useQuery } from '@tanstack/vue-query';
 import { type Ref, ref, watch } from 'vue';
 import { fetchArticlesService } from '../services';
+import { queryKeys } from '@/constants';
 
 export function useArticleList(currentPage: Ref<string>) {
   const pagesCount = ref(1);
 
   const { data, isFetching } = useQuery({
-    queryKey: ['articles', currentPage],
+    queryKey: [queryKeys.articles, currentPage],
     queryFn: ({ signal }) => fetchArticlesService(currentPage, signal),
     initialData: { articlesCount: 0, articles: [] },
   });

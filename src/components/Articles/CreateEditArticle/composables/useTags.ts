@@ -1,11 +1,12 @@
 import { useQuery } from '@tanstack/vue-query';
 import { fetchTagsService } from '../services';
 import { computed } from 'vue';
+import { queryKeys } from '@/constants';
 
 export function useTags() {
   const { data: tags, isFetching: isFetchingTags } = useQuery({
-    queryKey: ['tags'],
-    queryFn: () => fetchTagsService()
+    queryKey: [queryKeys.tags],
+    queryFn: () => fetchTagsService(),
   });
 
   const tagList = computed(() => {
@@ -17,6 +18,6 @@ export function useTags() {
 
   return {
     isFetchingTags,
-    tags: tagList
+    tags: tagList,
   };
 }

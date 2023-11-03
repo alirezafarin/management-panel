@@ -1,11 +1,12 @@
 import { deleteToken } from '@/helper';
 import { useQuery } from '@tanstack/vue-query';
 import { currentUserService } from '../services';
+import { queryKeys } from '@/constants';
 
 export function useCurrentUser() {
   const { data, isFetching } = useQuery({
-    queryKey: ['currentUser'],
-    queryFn: () => currentUserService()
+    queryKey: [queryKeys.currentUser],
+    queryFn: () => currentUserService(),
   });
 
   const logout = () => {
