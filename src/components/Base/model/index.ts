@@ -1,6 +1,6 @@
 import { type Ref } from 'vue';
 
-export interface ICustomInputProps {
+export interface IBaseInputProps {
   name?: string;
   label?: string;
   feedbackMsg?: string;
@@ -8,11 +8,11 @@ export interface ICustomInputProps {
   value: string;
 }
 
-export type CustomFormProps = {
+export type BaseFormProps = {
   submit: [];
 };
 
-export type CustomTableProps = {
+export type BaseTableProps = {
   items: any[];
   fields?: any[];
   withNumber?: boolean;
@@ -24,7 +24,7 @@ export interface IDropDownOption {
   onClick?: (slug: string) => void;
 }
 
-export interface ICustomDropDownProps {
+export interface IBaseDropDownProps {
   text?: string;
   options: IDropDownOption[];
 }

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import CustomDropDown from '@/components/DesignSystem/components/CustomDropDown.vue';
-import type { IDropDownOption } from '@/components/DesignSystem/model';
+import BaseDropDown from '@/components/Base/components/BaseDropDown.vue';
+import type { IDropDownOption } from '@/components/Base/model';
 import { useRouter } from 'vue-router';
 import { useDeleteArticle } from '../composables';
 
@@ -13,10 +13,10 @@ const { deleteArticle } = useDeleteArticle(slug);
 const options: IDropDownOption[] = [
   { id: 0, text: 'edit', onClick: navigateToEdit },
   { id: 1, text: 'divider' },
-  { id: 2, text: 'delete', onClick: deleteArticle }
+  { id: 2, text: 'delete', onClick: deleteArticle },
 ];
 </script>
 
 <template>
-  <CustomDropDown class="ml-2" variant="dark-blue" :options="options" />
+  <BaseDropDown class="ml-2" variant="dark-blue" :options="options" />
 </template>

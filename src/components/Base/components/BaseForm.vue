@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { CustomFormProps } from '../model';
+import type { BaseFormProps } from '../model';
 
-defineEmits<CustomFormProps>();
+defineEmits<BaseFormProps>();
 </script>
 
 <template>

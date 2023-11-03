@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import BaseBtn from '@/components/Base/components/BaseBtn.vue';
 import { en } from '@/dictionary/en';
-import CustomBtn from '../DesignSystem/components/CustomBtn.vue';
-import CustomForm from '../DesignSystem/components/CustomForm.vue';
-import CustomInput from '../DesignSystem/components/CustomInput.vue';
+import BaseForm from '../Base/components/BaseForm.vue';
+import BaseInput from '../Base/components/BaseInput.vue';
 import FormBox from './components/FormBox.vue';
 import { useRegister } from './composables';
 
@@ -11,11 +11,11 @@ const { form, onSubmit, buttonDisabled, isPending } = useRegister();
 
 <template>
   <FormBox :title="en.auth.register">
-    <CustomForm @submit="onSubmit">
-      <CustomInput name="username" :label="en.auth.user" v-model="form.username" />
-      <CustomInput name="email" :label="en.auth.email" v-model="form.email" type="email" />
-      <CustomInput name="password" :label="en.auth.pass" v-model="form.password" type="password" />
-      <CustomBtn
+    <BaseForm @submit="onSubmit">
+      <BaseInput name="username" :label="en.auth.user" v-model="form.username" />
+      <BaseInput name="email" :label="en.auth.email" v-model="form.email" type="email" />
+      <BaseInput name="password" :label="en.auth.pass" v-model="form.password" type="password" />
+      <BaseBtn
         class="mt-4"
         variant="primary"
         block
@@ -24,8 +24,8 @@ const { form, onSubmit, buttonDisabled, isPending } = useRegister();
         :disabled="buttonDisabled"
       >
         {{ en.auth.register }}
-      </CustomBtn>
-    </CustomForm>
+      </BaseBtn>
+    </BaseForm>
     <template #link>
       <p>
         {{ en.auth.registered }}

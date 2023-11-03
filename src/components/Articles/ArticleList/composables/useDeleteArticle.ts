@@ -1,10 +1,10 @@
-import { modalInjectionKey } from '@/components/DesignSystem/constants';
-import type { IModalInject } from '@/components/DesignSystem/model';
 import { en } from '@/dictionary/en';
 import { useMutation, useQueryClient } from '@tanstack/vue-query';
 import { inject } from 'vue';
 import { deleteArticleService } from '../services';
 import { useToast } from 'vue-toastification';
+import { modalInjectionKey } from '@/components/Base/constants';
+import type { IModalInject } from '@/components/Base/model';
 
 export function useDeleteArticle(slug: string) {
   const { setModal } = inject(modalInjectionKey) as IModalInject;
@@ -19,7 +19,7 @@ export function useDeleteArticle(slug: string) {
     },
     onError: (error) => {
       // toast.error('error');
-    }
+    },
   });
 
   const deleteArticle = () =>
@@ -28,7 +28,7 @@ export function useDeleteArticle(slug: string) {
       title: en.articles.deleteArticle,
       description: en.articles.sureToDelete,
       modalProps: { 'ok-variant': 'danger', 'cancel-variant': 'outline-secondary' },
-      handleOk: () => mutate()
+      handleOk: () => mutate(),
     });
 
   return { deleteArticle };

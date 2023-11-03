@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import CustomBtn from '@/components/DesignSystem/components/CustomBtn.vue';
-import CustomForm from '@/components/DesignSystem/components/CustomForm.vue';
-import CustomInput from '@/components/DesignSystem/components/CustomInput.vue';
 import { en } from '@/dictionary/en';
 import { RouterLink } from 'vue-router';
+import BaseBtn from '../Base/components/BaseBtn.vue';
+import BaseForm from '../Base/components/BaseForm.vue';
+import BaseInput from '../Base/components/BaseInput.vue';
 import FormBox from './components/FormBox.vue';
 import { useLogin } from './composables';
 
@@ -12,10 +12,10 @@ const { form, onSubmit, buttonDisabled, isPending } = useLogin();
 
 <template>
   <FormBox :title="en.auth.login" title-class="text-uppercase">
-    <CustomForm @submit="onSubmit">
-      <CustomInput name="email" :label="en.auth.email" v-model="form.email" type="email" />
-      <CustomInput name="password" :label="en.auth.pass" v-model="form.password" type="password" />
-      <CustomBtn
+    <BaseForm @submit="onSubmit">
+      <BaseInput name="email" :label="en.auth.email" v-model="form.email" type="email" />
+      <BaseInput name="password" :label="en.auth.pass" v-model="form.password" type="password" />
+      <BaseBtn
         class="mt-4"
         variant="primary"
         block
@@ -24,8 +24,8 @@ const { form, onSubmit, buttonDisabled, isPending } = useLogin();
         :disabled="buttonDisabled"
       >
         {{ en.auth.login }}
-      </CustomBtn>
-    </CustomForm>
+      </BaseBtn>
+    </BaseForm>
     <template #link>
       <p>
         {{ en.auth.noAccount }}

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { type ICustomInputProps } from '@/components/DesignSystem/model';
+import type { IBaseInputProps } from '../model';
 
-withDefaults(defineProps<ICustomInputProps>(), { feedbackMsg: '', state: null, value: '' });
+withDefaults(defineProps<IBaseInputProps>(), { feedbackMsg: '', state: null, value: '' });
 </script>
 
 <template>

@@ -44,6 +44,12 @@ const router = createRouter({
       meta: { requiresAuth: true },
     },
     {
+      path: '/',
+      redirect: () => {
+        return { name: 'home' };
+      },
+    },
+    {
       path: '/:notFound',
       redirect: () => {
         return { name: 'home' };

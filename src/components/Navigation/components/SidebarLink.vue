@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import CustomBtn from '@/components/DesignSystem/components/CustomBtn.vue';
+import BaseBtn from '@/components/Base/components/BaseBtn.vue';
 import type { ISidebarLink } from './model';
 defineProps<ISidebarLink>();
 </script>
 
 <template>
   <RouterLink class="text-light text-decoration-none" :to="to" v-slot="{ isActive }">
-    <CustomBtn :class="['text-left pl-4', { active: isActive }]" block :variant="variant" size="md">
-      <slot></slot> </CustomBtn
+    <BaseBtn :class="['text-left pl-4', { active: isActive }]" block :variant="variant" size="md">
+      <slot></slot> </BaseBtn
   ></RouterLink>
 </template>
 

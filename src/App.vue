@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router';
-import CustomModal from './components/DesignSystem/components/CustomModal.vue';
-import { useModal } from './components/DesignSystem/composables';
+import BaseModal from './components/Base/components/BaseModal.vue';
+import { useModal } from './components/Base/composables';
 
 useModal();
 </script>
@@ -10,7 +10,7 @@ useModal();
   <RouterView />
   <RouterView name="navigation" />
   <RouterView class="main-route p-4" name="main" />
-  <CustomModal />
+  <BaseModal />
 </template>
 
 <style lang="scss">

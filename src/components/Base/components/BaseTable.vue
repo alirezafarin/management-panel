@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import TableDropDown from '@/components/Articles/ArticleList/components/TableDropDown.vue';
-import type { CustomTableProps } from '../model';
-import CustomSpinner from './CustomSpinner.vue';
+import type { BaseTableProps } from '../model';
+import BaseSpinner from './BaseSpinner.vue';
 
-defineProps<CustomTableProps>();
+defineProps<BaseTableProps>();
 </script>
 
 <template>
-  <div class="custom-table-container">
+  <div class="base-table-container">
     <b-table
-      class="custom-table"
+      class="base-table"
       v-bind="$attrs"
       :fields="fields"
       :items="items"
@@ -29,14 +29,14 @@ defineProps<CustomTableProps>();
           new Date(data.value).toLocaleDateString('en', {
             year: 'numeric',
             month: 'long',
-            day: 'numeric'
+            day: 'numeric',
           })
         }}
         <TableDropDown :slug="data.item.slug" />
       </template>
       <template #table-busy>
         <div class="text-center">
-          <CustomSpinner variant="primary" class="align-middle" />
+          <BaseSpinner variant="primary" class="align-middle" />
         </div>
       </template>
     </b-table>
@@ -44,18 +44,18 @@ defineProps<CustomTableProps>();
 </template>
 
 <style scoped lang="scss">
-.custom-table-container {
+.base-table-container {
   height: 700px;
   min-width: 475;
   overflow: auto;
 }
 
-.custom-table {
+.base-table {
   width: 100% !important;
   height: 100% !important;
 }
 
-.custom-table-loading {
+.base-table-loading {
   height: 100% !important;
 }
 </style>
