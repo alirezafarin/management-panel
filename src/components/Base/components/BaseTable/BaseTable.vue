@@ -16,7 +16,7 @@ defineProps<BaseTableProps>();
       head-variant="light"
     >
       <template #cell(#)="data"
-        >{{ (($attrs['current-page'] as number) - 1) * 10 + data.index + 1 }}
+        >{{ ((currentPage as number) - 1) * 10 + data.index + 1 }}
       </template>
       <template #cell(name)="data">
         {{ data.value }}

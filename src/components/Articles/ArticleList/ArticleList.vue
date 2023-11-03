@@ -11,33 +11,36 @@ const fields = [
   '#',
   {
     key: 'title',
-    label: 'Title',
+    label: en.articles.title,
     formatter: (value: string) => {
       return `${value.slice(0, 20)} ...`;
     },
   },
   {
     key: 'author',
-    label: 'Author',
+    label: en.articles.author,
     formatter: (value: any) => {
       return value.username;
     },
   },
   {
     key: 'tagList',
-    label: 'Tag List',
+    label: en.articles.tagList,
     formatter: (value: string) => {
       return value;
     },
   },
   {
     key: 'body',
-    label: 'Body',
+    label: en.articles.body,
     formatter: (value: string) => {
       return `${value.slice(0, 20)} ...`;
     },
   },
-  'createdAt',
+  {
+    key: 'createdAt',
+    label: en.articles.createdAt,
+  },
 ];
 </script>
 

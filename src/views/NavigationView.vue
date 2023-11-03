@@ -4,6 +4,7 @@ import BaseBtn from '@/components/Base/components/BaseBtn.vue';
 import BaseNavbar from '@/components/Base/components/BaseNavbar.vue';
 import SideBar from '@/components/Navigation/SideBar.vue';
 import SidebarLinks from '@/components/Navigation/components/SidebarLinks.vue';
+import { en } from '@/dictionary/en';
 
 const { data, isFetching, logout } = useCurrentUser();
 </script>
@@ -11,10 +12,10 @@ const { data, isFetching, logout } = useCurrentUser();
 <template>
   <BaseNavbar toggleable="md">
     <template v-if="!isFetching" #left>
-      <p class="d-none d-md-block text-light mb-md-0">Welcome {{ data?.user.username }}</p>
+      <p class="d-none d-md-block text-light mb-md-0">{{ en.welcome }} {{ data?.user.username }}</p>
     </template>
     <template #right>
-      <BaseBtn :click="logout" variant="outline-info">Logout</BaseBtn>
+      <BaseBtn :click="logout" variant="outline-info">{{ en.logout }}</BaseBtn>
     </template>
     <template #collapsable>
       <div class="d-sm-block d-md-none d-lg-none">

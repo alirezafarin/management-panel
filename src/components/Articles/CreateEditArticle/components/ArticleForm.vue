@@ -6,6 +6,7 @@ import BaseTextarea from '@/components/Base/components/BaseTextarea.vue';
 import { inject } from 'vue';
 import { formInjectionKey, type IArticleFormInject } from '../composables';
 import ArticleTags from './ArticleTags.vue';
+import { en } from '@/dictionary/en';
 
 const { buttonDisabled, formValues, isPending, onSubmit } = inject<IArticleFormInject>(
   formInjectionKey,
@@ -16,9 +17,9 @@ const { buttonDisabled, formValues, isPending, onSubmit } = inject<IArticleFormI
   <BaseForm @submit="onSubmit">
     <b-row>
       <b-col lg="9" md="12">
-        <BaseInput label="Title" v-model="formValues.title" />
-        <BaseInput label="Description" v-model="formValues.description" />
-        <BaseTextarea label="Body" rows="10" v-model="formValues.body" />
+        <BaseInput :label="en.articles.title" v-model="formValues.title" />
+        <BaseInput :label="en.articles.description" v-model="formValues.description" />
+        <BaseTextarea :label="en.articles.body" rows="10" v-model="formValues.body" />
       </b-col>
       <b-col>
         <ArticleTags />
