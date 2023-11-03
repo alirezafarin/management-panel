@@ -1,11 +1,44 @@
 <script setup lang="ts">
 import BasePagination from '@/components/Base/components/BasePagination.vue';
-import BaseTable from '@/components/Base/components/BaseTable.vue';
+import BaseTable from '@/components/Base/components/BaseTable/BaseTable.vue';
 import { en } from '@/dictionary/en';
 import { useArticleList, usePagination } from './composables';
 
 const { linkGen, currentPage } = usePagination();
 const { data, isFetching } = useArticleList(currentPage);
+
+const fields = [
+  '#',
+  {
+    key: 'title',
+    label: 'Title',
+    formatter: (value: string) => {
+      return `${value.slice(0, 20)} ...`;
+    },
+  },
+  {
+    key: 'author',
+    label: 'Author',
+    formatter: (value: any) => {
+      return value.username;
+    },
+  },
+  {
+    key: 'tagList',
+    label: 'Tag List',
+    formatter: (value: string) => {
+      return value;
+    },
+  },
+  {
+    key: 'body',
+    label: 'Body',
+    formatter: (value: string) => {
+      return `${value.slice(0, 20)} ...`;
+    },
+  },
+  'createdAt',
+];
 </script>
 
 <template>
@@ -13,12 +46,7 @@ const { data, isFetching } = useArticleList(currentPage);
     <h1 class="mb-4">
       {{ en.articles.allPosts }}
     </h1>
-    <BaseTable
-      with-number
-      :fields="['#', 'title', 'author', 'tagList', 'body', 'createdAt']"
-      :items="data.articles"
-      :busy="isFetching"
-    />
+    <BaseTable with-number :fields="fields" :items="data.articles" :busy="isFetching" />
     <BasePagination
       class="d-flex justify-content-center mt-2"
       :link-gen="linkGen"

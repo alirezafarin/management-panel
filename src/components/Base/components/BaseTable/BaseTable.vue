@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import TableDropDown from '@/components/Articles/ArticleList/components/TableDropDown.vue';
-import type { BaseTableProps } from '../model';
-import BaseSpinner from './BaseSpinner.vue';
+import BaseSpinner from '../BaseSpinner.vue';
+import BaseTableDate from './components/BaseTableDate.vue';
+import type { BaseTableProps } from './model';
 
 defineProps<BaseTableProps>();
 </script>
@@ -15,24 +15,12 @@ defineProps<BaseTableProps>();
       :items="items"
       head-variant="light"
     >
-      <template v-if="withNumber" #cell(#)="data">
-        {{ data.index + 1 }}
-      </template>
-      <template #cell(title)="data"> {{ data.value.slice(0, 20) }} ... </template>
-      <template #cell(author)="data"> {{ data.value.username }} </template>
-      <template #cell(tagList)="data">
+      <template v-if="withNumber" #cell(#)="data">{{ data.index + 1 }} </template>
+      <template #cell(name)="data">
         {{ data.value }}
       </template>
-      <template #cell(body)="data"> {{ data.value.slice(0, 20) }} ... </template>
       <template #cell(createdAt)="data">
-        {{
-          new Date(data.value).toLocaleDateString('en', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })
-        }}
-        <TableDropDown :slug="data.item.slug" />
+        <BaseTableDate :date="data.value" :slug="data.item.slug" />
       </template>
       <template #table-busy>
         <div class="text-center">

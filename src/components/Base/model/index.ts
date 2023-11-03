@@ -12,12 +12,6 @@ export type BaseFormProps = {
   submit: [];
 };
 
-export type BaseTableProps = {
-  items: any[];
-  fields?: any[];
-  withNumber?: boolean;
-};
-
 export interface IDropDownOption {
   id: number;
   text: string;
