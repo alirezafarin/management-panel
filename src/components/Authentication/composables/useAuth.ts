@@ -3,6 +3,8 @@ import router from '@/router';
 import { useMutation } from '@tanstack/vue-query';
 import { computed, type Ref } from 'vue';
 import { type IRegisterResponse } from '../services';
+import { handleAuthErrors } from '.';
+import type { AxiosError } from 'axios';
 
 export interface IUseAuthProps<T = any> {
   serviceFn: (body: T) => Promise<IRegisterResponse>;
@@ -16,9 +18,7 @@ export function useAuth({ serviceFn, formValues }: IUseAuthProps) {
       setToken(data.user.token);
       router.push({ name: 'home' });
     },
-    onError: (error) => {
-      // toast.error('error');
-    }
+    onError: (error) => handleAuthErrors(error as AxiosError),
   });
 
   const buttonDisabled = computed(() => {
