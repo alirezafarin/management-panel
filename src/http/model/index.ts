@@ -1,7 +1,9 @@
-export interface IError {
-  [key: string]: string[];
+export interface IApiError {
+  status: number;
+  data: { message: string };
 }
 
 export interface IErrors {
-  errors: IError;
+  status: number;
+  data: { message: string };
 }

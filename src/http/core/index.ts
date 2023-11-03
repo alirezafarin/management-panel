@@ -1,6 +1,6 @@
 import { getToken } from '@/helper';
 import axios, { AxiosError, type AxiosRequestConfig, type AxiosResponse } from 'axios';
-import type { IErrors } from '../model';
+import { handleRequestErrors } from '../helper';
 
 const axiosInstance = axios.create({ baseURL: import.meta.env.VITE_BASE_URL, timeout: 10000 });
 
@@ -19,10 +19,9 @@ axiosInstance.interceptors.response.use(
   function (response: AxiosResponse) {
     return response;
   },
-  function (error: AxiosError<IErrors>) {
-    // const toast = useToast();
-    // toast.error('error from axios file');
-    return Promise.reject(error.response?.data.errors);
+  function (error: AxiosError) {
+    handleRequestErrors(error);
+    return Promise.reject(error);
   },
 );
 

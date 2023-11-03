@@ -36,4 +36,8 @@ export const en = {
   name: 'Arvan Challenge',
   welcome: 'Welcome',
   logout: 'Logout',
+  errors: {
+    noAuth: 'You are not authorized to do this !',
+    notFound: 'The server has a problem.',
+  },
 };
