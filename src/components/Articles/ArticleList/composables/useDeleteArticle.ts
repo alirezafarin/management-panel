@@ -14,12 +14,9 @@ export function useDeleteArticle(slug: string) {
 
   const { mutate } = useMutation({
     mutationFn: () => deleteArticleService(slug),
-    onSuccess: (data) => {
+    onSuccess: () => {
       toast.success(en.articles.deletedSuccessfully);
       queryClient.invalidateQueries({ queryKey: [queryKeys.articles] });
-    },
-    onError: (error) => {
-      // toast.error('error');
     },
   });
 

@@ -3,8 +3,9 @@ import BasePagination from '@/components/Base/components/BasePagination.vue';
 import BaseTable from '@/components/Base/components/BaseTable/BaseTable.vue';
 import { en } from '@/dictionary/en';
 import { useArticleList, usePagination } from './composables';
+import { linkGen } from './helper';
 
-const { linkGen, currentPage } = usePagination();
+const { currentPage } = usePagination();
 const { data, isFetching, pagesCount } = useArticleList(currentPage);
 
 const fields = [
