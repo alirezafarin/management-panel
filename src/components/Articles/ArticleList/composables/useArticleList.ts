@@ -4,7 +4,7 @@ import { fetchArticlesService } from '../services';
 import { queryKeys } from '@/constants';
 
 export function useArticleList(currentPage: Ref<string>) {
-  const pagesCount = ref(1);
+  const pagesCount = ref(0);
 
   const { data, isFetching } = useQuery({
     queryKey: [queryKeys.articles, currentPage],

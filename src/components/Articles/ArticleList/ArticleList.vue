@@ -59,6 +59,7 @@ const fields = [
       class="d-flex justify-content-center mt-2"
       :link-gen="linkGen"
       :number-of-pages="pagesCount"
+      v-if="pagesCount"
       v-model="currentPage"
       first-number
       last-number
