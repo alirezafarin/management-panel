@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { useCurrentUser } from '@/components/Authentication/composables';
+import { logout } from '@/components/Authentication/helper';
 import BaseBtn from '@/components/Base/components/BaseBtn.vue';
 import BaseNavbar from '@/components/Base/components/BaseNavbar.vue';
 import SideBar from '@/components/Navigation/SideBar.vue';
 import SidebarLinks from '@/components/Navigation/components/SidebarLinks.vue';
 import { en } from '@/dictionary/en';
 
-const { data, isFetching, logout } = useCurrentUser();
+const { data, isFetching } = useCurrentUser();
 </script>
 
 <template>
