@@ -10,7 +10,7 @@ import { checkRequiredFields } from './helper';
 export function useArticleService({
   serviceFn,
   formValues,
-  successMsg = en.articles.createSuccessful
+  successMsg = en.articles.createSuccessful,
 }: IUseArticleServiceProps) {
   const toast = useToast();
   const router = useRouter();
@@ -21,7 +21,6 @@ export function useArticleService({
       toast.success(successMsg);
       router.push({ name: 'home' });
     },
-    onError: (error) => {}
   });
 
   const buttonDisabled = computed(() => checkRequiredFields(formValues.value));
@@ -35,6 +34,6 @@ export function useArticleService({
   return {
     onSubmit,
     buttonDisabled,
-    isPending
+    isPending,
   };
 }

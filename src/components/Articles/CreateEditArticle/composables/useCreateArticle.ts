@@ -9,12 +9,12 @@ export function useCreateArticle() {
     body: '',
     description: '',
     tagList: [],
-    newTag: ''
+    newTag: '',
   });
   const { isFetchingTags, tags } = useTags();
   const { buttonDisabled, isPending, onSubmit } = useArticleService({
     formValues,
-    serviceFn: createArticleService
+    serviceFn: createArticleService,
   });
 
   provide(formInjectionKey, { buttonDisabled, formValues, isPending, onSubmit });
